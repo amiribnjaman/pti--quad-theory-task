@@ -38,7 +38,7 @@ export default function Navbar() {
           <input
             type="text"
             className="bg-transparent w-4/5 focus:outline-none py-1"
-            placeholder="Search Autobook"
+            placeholder="Search Audiobook"
           />
         </div>
 
@@ -87,52 +87,51 @@ export default function Navbar() {
             } w-[153px] absolute top-[80px] right-[180px] bg-[#FEFEFE] rounded-xl py-3 shadow`}
           >
             <li>
-              <a
-                className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
+              <Link className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 Home
-              </a>
+              </Link >
             </li>
             <li>
-              <a
+              <Link 
                 className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 Details
-              </a>
+              </Link >
             </li>
             <li>
-              <a
+              <Link 
                 className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 Category
-              </a>
+              </Link >
             </li>
             <li>
-              <a
+              <Link 
                 className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 My Favourites
-              </a>
+              </Link >
             </li>
             <li>
-              <a
+              <Link 
                 className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 Profile
-              </a>
+              </Link >
             </li>
             <li>
-              <a
+              <Link 
                 className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
                 href=""
               >
                 Log In/Sign up
-              </a>
+              </Link >
             </li>
           </ul>
         </div>
