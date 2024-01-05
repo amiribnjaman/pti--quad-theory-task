@@ -6,7 +6,7 @@ import { ubuntu } from "@/utils/fonts";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F99F1C] pb-12 mt-16">
+    <footer className="w-full bg-[#F99F1C] pb-16 mt-16">
       <div className="w-[70%] mx-auto flex justify-between items-center">
         {/*-----------FOOTER LEFT SIDE-------- */}
         <div className="w-[55%]">
@@ -18,7 +18,7 @@ export default function Footer() {
               placeholder="Enter Your Email"
             />
             <button className="bg-[#FC6011] rounded-lg px-2 py-1.5 text-white flex items-center gap-1">
-              <span className="text-[13px]">Subscribe</span>
+              <span className="text-[14px]">Subscribe</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

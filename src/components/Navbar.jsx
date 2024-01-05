@@ -84,7 +84,7 @@ export default function Navbar() {
           <ul
             className={`${
               showMenu ? "block" : "hidden"
-            } w-[153px] absolute top-[80px] right-[190px] bg-[#FEFEFE] rounded-xl py-3 shadow`}
+            } w-[153px] absolute top-[80px] right-[180px] bg-[#FEFEFE] rounded-xl py-3 shadow`}
           >
             <li>
               <a
