@@ -36,10 +36,10 @@ export default async function Home() {
         </div>
 
         {/*-----ITEMS SHOWING SECTION-----*/}
-        <div>
+        <div className="grid grid-cols-5 gap-y-8 gap-x-4 my-4">
           {
             items.Items.map(item => (
-              <FoodItemCard item={item} />
+              item.IsPopular && <FoodItemCard item={item} />
             ))
           }
         </div>
