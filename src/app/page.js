@@ -1,11 +1,19 @@
-import Image from 'next/image'
-import bannerImg from '@/Assets/Image1.png'
+import Image from "next/image";
+import bannerImg from "@/Assets/Image1.png";
+import getAllItems from "./utils/getAllItems";
+import FoodItemCard from "@/components/FoodItemCard";
 
-export default function Home() {
+export default async function Home() {
+
+  /**
+   * CALL THE DATA FETCHING FUNCTION
+   */
+  const items = await getAllItems();
+
   return (
-    <main className="">
-      {/*------------HOME PAGE BANNER SECTION------------ */}
-      <section className="w-[75%] mx-auto my-24 bg-[#F99F1C] rounded-lg h-auto flex items-center px-8 text-white">
+    <main className="w-[75%] mx-auto">
+      {/*------------BANNER SECTION------------ */}
+      <section className="my-28 bg-[#F99F1C] rounded-3xl h-auto flex items-center px-8 text-white">
         <div className="pl-16">
           <h1 className="text-4xl font-semibold tracking-wider leading-tight text-[#FFEFE7]">
             Deliver Food To Your Door Step!
@@ -16,6 +24,24 @@ export default function Home() {
         </div>
         <div>
           <Image src={bannerImg} alt="banner-img" />
+        </div>
+      </section>
+
+      {/*------------POPULAR FOOD SECTION------------*/}
+      <section className="my-3">
+        {/*-----HEADER-----*/}
+        <div className="flex justify-between">
+          <h3 className="text-2xl">Popular</h3>
+          <span>next</span>
+        </div>
+
+        {/*-----ITEMS SHOWING SECTION-----*/}
+        <div>
+          {
+            items.Items.map(item => (
+              <FoodItemCard item={item} />
+            ))
+          }
         </div>
       </section>
     </main>

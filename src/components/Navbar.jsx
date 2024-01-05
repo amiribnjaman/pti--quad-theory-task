@@ -2,7 +2,7 @@
 
 import { Libre_Barcode_39, Ubuntu } from "next/font/google";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ubuntu = Ubuntu({
   weight: ["400", "500", "700"],
@@ -96,7 +96,7 @@ export default function Navbar() {
           <ul
             className={`${
               showMenu ? "block" : "hidden"
-            } w-[153px] absolute top-[80px] right-[190px] bg-[#FEFEFE] rounded-xl py-3`}
+            } w-[153px] absolute top-[80px] right-[190px] bg-[#FEFEFE] rounded-xl py-3 shadow`}
           >
             <li>
               <a
