@@ -1,6 +1,6 @@
 import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
-import getAllItems from "./utils/getAllItems";
+import getAllItems from "@/utils/getAllItems";
 import FoodItemCard from "@/components/FoodItemCard";
 
 export default async function Home() {
@@ -28,7 +28,7 @@ export default async function Home() {
       </section>
 
       {/*------------POPULAR FOOD SECTION------------*/}
-      <section className="my-3">
+      <section className="mt-3 ">
         {/*-----HEADER-----*/}
         <div className="flex justify-between">
           <h3 className="text-2xl">Popular</h3>

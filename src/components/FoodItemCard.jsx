@@ -7,7 +7,7 @@ export default function FoodItemCard({ item }) {
   // const newImageUrl = splitBackWordSlash[0].concat(splitBackWordSlash[1]);
   // console.log(n, j)
   return (
-    <div className=" rounded-md">
+    <div className=" rounded-md cursor-pointer">
       <img src={item.ImageUrl} alt="" className='rounded-lg h-[220px]'/>
       <h4 className='text-center mt-1'>{item.Name}</h4>
        {/* <Image placeholder='blur' blurDataURL={item.ImageUrl} src={item.ImageUrl} alt="food-image" width="100" height="100" /> */}

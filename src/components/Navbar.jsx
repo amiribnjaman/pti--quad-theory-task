@@ -1,20 +1,8 @@
 "use client";
 
-import { Libre_Barcode_39, Ubuntu } from "next/font/google";
+import { ubuntu } from "@/utils/fonts";
 import Link from "next/link";
 import { useState } from "react";
-
-const ubuntu = Ubuntu({
-  weight: ["400", "500", "700"],
-  subsets: [
-    "cyrillic",
-    "cyrillic-ext",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext",
-  ],
-});
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
