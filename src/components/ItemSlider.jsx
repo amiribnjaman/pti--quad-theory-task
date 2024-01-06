@@ -58,7 +58,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
           ? Items.map(
               (item) =>
                 item.IsRecommended && (
-                  <SwiperSlide>
+                  <SwiperSlide key={item.Id}>
                     <div className="cursor-pointer">
                       <img
                         src={item.ImageUrl}
