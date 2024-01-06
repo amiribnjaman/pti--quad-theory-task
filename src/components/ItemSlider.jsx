@@ -42,8 +42,9 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
           ? Items.map(
               (item) =>
                 item.IsPopular && (
-                  <SwiperSlide>
-                    <div key={item.Id} className="cursor-pointer">
+                  <div key={item.Id}>
+                    <SwiperSlide>
+                    <div className="cursor-pointer">
                       <img
                         src={item.ImageUrl}
                         className="w-full h-[210px] rounded-lg"
@@ -52,22 +53,25 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                       <h5 className="text-center">{item.Name}</h5>
                     </div>
                   </SwiperSlide>
+                  </div>
                 )
             )
           : IsRecommended
           ? Items.map(
               (item) =>
                 item.IsRecommended && (
-                  <SwiperSlide >
-                    <div className="cursor-pointer" key={item.Id}>
+                  <div key={item.Id}>
+                    <SwiperSlide>
+                    <div className="cursor-pointer">
                       <img
                         src={item.ImageUrl}
                         className="w-full h-[210px] rounded-lg"
                         alt=""
                       />
-                      <h5 className="text-center mt-1">{item.Name}</h5>
+                      <h5 className="text-center">{item.Name}</h5>
                     </div>
                   </SwiperSlide>
+                  </div>
                 )
             )
           : ""}
