@@ -7,7 +7,7 @@ import { ubuntu } from "@/utils/fonts";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F99F1C] pb-14 mt-28">
-      <div className="pt-4 md:pt-0 px-1 md:w-[89%] lg:w-[87%] mt-8 md:mt-0 md:px-0 md:w-[70%] mx-auto flex justify-between items-center">
+      <div className="pt-4 md:pt-0 px-1 w-[87%] mt-8 md:mt-0 md:px-0 md:w-[70%] mx-auto flex justify-between items-center">
         {/*-----------FOOTER LEFT SIDE-------- */}
         <div className="md:w-[50%] w-full pt-8">
           {/*---------FOOTER SEARCH BOX-------- */}
