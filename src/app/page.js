@@ -1,36 +1,34 @@
-'use client';
-
 import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import ItemSlider from "@/components/ItemSlider";
 import AddMoreFormAndBtn from "@/components/AddMoreFormAndBtn";
-import { useContext } from "react";
-import { SiteContext } from "@/components/LayoutComponent";
 
-export default function Home() {
+export default async function Home() {
 
   /**
-   * GET ITEMS VALUE THROUGH USING USECONTEXT
+   * CALL THE DATA FETCHING FUNCTION
    */
-  const {items} = useContext(SiteContext)
+  const items = await getAllItems();
+
+  
 
   return (
-    <main className="w-[95%] md:w-[90%] lg:w-[75%] mx-auto">
+    <main className="w-[95%] md:w-[90%] lg:w-[75%]  mx-auto">
       {/*------------BANNER SECTION------------ */}
       <section className="md:my-28 mt-10 mb-14 md:bg-[#F99F1C] rounded-3xl h-auto md:flex items-center px-2 md:px-8 text-white">
         <div className="md:pl-16">
           <h1 className="text-4xl md:text-left text-[#11263C]  text-center font-semibold tracking-wider leading-tight md:text-[#FFEFE7]">
             Deliver Food To Your Door Step!
           </h1>
-          <p className="md:text-[#ECD0A8] text-center md:text-left text-[#808B96] text-sm md:text-lg mt-3">
+          <p className="md:text-[#ECD0A8] text-center md:text-left text-[# text-sm md:text-lg mt-3">
             Authentic food, Quick Service, Fast Delivery
           </p>
         </div>
         <div className="bg-[#FD9460] h-[15%] flex justify-center items-start md:h-auto md:bg-transparent mt-20 md:mt-0 rounded-md md:rounded-none">
           <Image
             src={bannerImg}
-            className="mt-[-60px] md:mt-0"
+            className="mt-[-80px] md:mt-0"
             alt="banner-img"
           />
         </div>
@@ -63,6 +61,7 @@ export default function Home() {
           <ItemSlider IsRecommended="IsRecommended" items={items} />
         </div>
       </section>
+
     </main>
   );
 }

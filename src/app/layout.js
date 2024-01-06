@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import LayoutComponent from "@/components/LayoutComponent";
+import { lazy, Suspense } from "react";
+import Loading from "./Loading";
+
+const LayoutComponent = lazy(() => import("@/components/LayoutComponent"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +14,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#EEEFF0]`}>
-        <LayoutComponent>{children}</LayoutComponent>
+        <Suspense falllback={<Loading />}>
+          <LayoutComponent>{children}</LayoutComponent>
+        </Suspense>
       </body>
     </html>
   );
