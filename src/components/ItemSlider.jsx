@@ -17,16 +17,23 @@ import { FreeMode, Pagination, Navigation } from "swiper/modules";
 export default function ItemSlider({ IsPopular, IsRecommended, items }) {
   const { Items } = items;
 
-
   return (
     <>
       <Swiper
-        slidesPerView={5}
+        slidesPerView={3}
         spaceBetween={15}
         freeMode={true}
         // pagination={{
         //   clickable: true,
         // }}
+        breakpoints={{
+          576: {
+            slidesPerView: 4,
+          },
+          768: {
+            slidesPerView: 5,
+          },
+        }}
         navigation={true}
         modules={[FreeMode, Pagination, Navigation]}
         className="mySwiper"
