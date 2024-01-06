@@ -58,7 +58,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                         className="w-full h-[210px] rounded-lg"
                         alt=""
                       />
-                      <h5 className="text-center">{item.Name}</h5>
+                      <h5 className="text-center mt-1">{item.Name}</h5>
                     </div>
                   </SwiperSlide>
                 )

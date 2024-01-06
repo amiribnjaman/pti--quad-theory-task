@@ -1,9 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
+import { useForm } from "react-hook-form"
 
-export default function AddMoreBtn() {
+export default function AddMoreFormAndBtn() {
   const [showAddCard, setShowAddCard] = useState(false);
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+
+  /**
+   * 
+   * HANDLE ADD ITEM FORM
+   * @param {*} data accepting form data through submitting form
+   * 
+   */ 
+  const handleAddItemForm = (data) => {
+    reset()
+    console.log(data)
+  }
+
   return (
     <>
       <button
@@ -31,17 +50,30 @@ export default function AddMoreBtn() {
           </button>
         </div>
 
-        <form className="mt-6 pr-3" action="" encType="multipart/form-data">
+        {/*--------FORM -----------*/}
+        <form
+          onSubmit={handleSubmit(handleAddItemForm)}
+          className="mt-6 pr-3"
+          action=""
+          encType="multipart/form-data"
+        >
           <div className="flex flex-col mb-3">
             <label htmlFor="name" className="text-[14px]">
               Item Name
             </label>
             <input
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
+              {...register("name", { required: true })}
+              aria-invalid={errors.name ? "true" : "false"}
               type="text"
               id="name"
-              placeholder=""
             />
+            {/*-----EROR SHOWING---- */}
+            {errors.name?.type === "required" && (
+              <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
+                Item name is required.
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col mb-3">
@@ -49,11 +81,18 @@ export default function AddMoreBtn() {
               Price
             </label>
             <input
+              {...register("price", { required: true })}
+              aria-invalid={errors.price ? "true" : "false"}
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
               type="number"
-              name="price"
-              id=""
+              id="price"
             />
+            {/*-----EROR SHOWING---- */}
+            {errors.price?.type === "required" && (
+              <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
+                Price field is required.
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col mb-3">
@@ -61,11 +100,18 @@ export default function AddMoreBtn() {
               Image
             </label>
             <input
+              {...register("image", { required: true })}
+              aria-invalid={errors.image ? "true" : "false"}
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
               type="file"
-              name=""
               id="image"
             />
+            {/*-----EROR SHOWING---- */}
+            {errors.price?.type === "required" && (
+              <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
+                Image is required.
+              </p>
+            )}
           </div>
           <div>
             <button

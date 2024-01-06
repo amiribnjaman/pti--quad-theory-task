@@ -2,7 +2,7 @@ import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import ItemSlider from "@/components/ItemSlider";
-import AddMoreBtn from "@/components/AddMoreBtn";
+import AddMoreFormAndBtn from "@/components/AddMoreFormAndBtn";
 
 export default async function Home() {
 
@@ -33,7 +33,7 @@ export default async function Home() {
         {/*-----HEADER-----*/}
         <div className="flex justify-between">
           <h3 className="text-2xl">Popular</h3>
-          <AddMoreBtn />
+          <AddMoreFormAndBtn />
         </div>
 
         {/*-----------POPULAR FOOD SECTION----------*/}
@@ -43,11 +43,11 @@ export default async function Home() {
       </section>
 
       {/*------------RECOMENDED FOOD SECTION------------ */}
-      <section className="mt-2 ">
+      <section className="mt-4 ">
         {/*-----HEADER-----*/}
         <div className="flex justify-between">
           <h3 className="text-2xl">Recommended</h3>
-          <AddMoreBtn />
+          <AddMoreFormAndBtn />
         </div>
 
         {/*-----------POPULAR FOOD SECTION----------*/}
