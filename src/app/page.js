@@ -2,6 +2,7 @@ import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import FoodItemCard from "@/components/FoodItemCard";
+import ItemSlider from "@/components/ItemSlider";
 
 export default async function Home() {
 
@@ -35,13 +36,23 @@ export default async function Home() {
           <span>next</span>
         </div>
 
-        {/*-----ITEMS SHOWING SECTION-----*/}
-        <div className="grid grid-cols-5 gap-y-8 gap-x-4 my-4">
-          {
-            items.Items.map(item => (
-              item.IsPopular && <FoodItemCard item={item} />
-            ))
-          }
+        {/*-----------POPULAR FOOD SECTION----------*/}
+        <div className="mb-8 mt-4">
+          <ItemSlider IsPopular="IsPopular" items={items} />
+        </div>
+      </section>
+
+      {/*------------RECOMENDED FOOD SECTION------------ */}
+      <section className="mt-8 ">
+        {/*-----HEADER-----*/}
+        <div className="flex justify-between">
+          <h3 className="text-2xl">Recommended</h3>
+          <span>next</span>
+        </div>
+
+        {/*-----------POPULAR FOOD SECTION----------*/}
+        <div className="mb-8 mt-4">
+          <ItemSlider IsRecommended="IsRecommended" items={items} />
         </div>
       </section>
     </main>
