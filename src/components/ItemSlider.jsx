@@ -16,9 +16,7 @@ import { FreeMode, Pagination, Navigation } from "swiper/modules";
 
 export default function ItemSlider({ IsPopular, IsRecommended, items }) {
   const { Items } = items;
-  console.log(IsPopular, IsRecommended, Items);
 
-  //   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <>
@@ -41,7 +39,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                     <div className="cursor-pointer">
                       <img
                         src={item.ImageUrl}
-                        className="w-full h-[200px] rounded-lg"
+                        className="w-full h-[210px] rounded-lg"
                         alt=""
                       />
                       <h5 className="text-center">{item.Name}</h5>
@@ -57,7 +55,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                     <div className="cursor-pointer">
                       <img
                         src={item.ImageUrl}
-                        className="w-full h-[200px] rounded-lg"
+                        className="w-full h-[210px] rounded-lg"
                         alt=""
                       />
                       <h5 className="text-center">{item.Name}</h5>

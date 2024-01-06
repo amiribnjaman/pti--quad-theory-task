@@ -2,14 +2,10 @@
 *
 * SWIPER SLIDER CUSTOM STYLE
 */
-.swiper {
-    position: relative;
-    overflow-y: visible;
-}
 .swiper-button-prev, .swiper-button-next{
     background-color: #EEEFF0;
     padding: 7px 20px;
-    opacity: 70%;
+    opacity: 80%;
     border-radius: 50%;
     color: #FC6011;
 }

@@ -6,7 +6,7 @@ import { ubuntu } from "@/utils/fonts";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F99F1C] pb-14 mt-16">
+    <footer className="w-full bg-[#F99F1C] pb-14 mt-28">
       <div className="w-[70%] mx-auto flex justify-between items-center">
         {/*-----------FOOTER LEFT SIDE-------- */}
         <div className="w-[55%]">
