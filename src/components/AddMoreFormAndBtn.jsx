@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"
+import toast from "react-hot-toast";
 
 export default function AddMoreFormAndBtn() {
   const [showAddCard, setShowAddCard] = useState(false);
+
   const {
     register,
     formState: { errors },
@@ -19,8 +21,8 @@ export default function AddMoreFormAndBtn() {
    * 
    */ 
   const handleAddItemForm = (data) => {
+    toast.success("Your Item accepted! We'll work for add it.");
     reset()
-    console.log(data)
   }
 
   return (
@@ -107,7 +109,7 @@ export default function AddMoreFormAndBtn() {
               id="image"
             />
             {/*-----EROR SHOWING---- */}
-            {errors.price?.type === "required" && (
+            {errors.image?.type === "required" && (
               <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
                 Image is required.
               </p>
