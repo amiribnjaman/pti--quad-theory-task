@@ -85,7 +85,7 @@ export default function Navbar() {
           <ul
             className={`${
               showMenu ? "block" : "hidden"
-            } w-[153px] absolute top-[80px] right-[180px] bg-[#FEFEFE] rounded-xl py-3 shadow`}
+            } w-[153px] absolute top-[80px] right-[1%] md:right-[13%] lg:right-[18%] xl:right-[21%] bg-[#FEFEFE] rounded-xl py-3 shadow`}
           >
             <li>
               <Link className="px-4 block py-1 text-[15px] text-[#586776] hover:text-[#FD6011] hover:bg-[#E7E9EC]"
