@@ -38,7 +38,7 @@ export default function Navbar() {
 
           <input
             type="text"
-            className="bg-transparent w-4/5 focus:outline-none py-1"
+            className="bg-transparent w-[92%] focus:outline-none py-1"
             placeholder="Search Audiobook"
           />
         </div>

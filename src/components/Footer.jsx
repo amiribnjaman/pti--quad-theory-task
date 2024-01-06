@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="w-full bg-[#F99F1C] pb-14 mt-28">
       <div className="pt-4 md:pt-0 px-1 w-[87%] mt-8 md:mt-0 md:px-0 md:w-[70%] mx-auto flex justify-between items-center">
         {/*-----------FOOTER LEFT SIDE-------- */}
-        <div className="md:w-[50%] w-full pt-8">
+        <div className="md:w-[50%] w-full pt-8 md:pt-0">
           {/*---------FOOTER SEARCH BOX-------- */}
           <div className="w-[100%] md:w-[400px] pl-3 py-1 pr-2 rounded-lg md:rounded-xl bg-[#F2F2F2] flex justify-between">
             <input
@@ -45,7 +45,7 @@ export default function Footer() {
               >
                 pti<span className="text-[#FE613B]">.</span>
               </Link>
-              <p className="font-semibold text-[13px] mt-4">
+              <p className="font-semibold text-[13px] mt-6">
                 Copyright&copy;Tripp. All Right Reserved.
               </p>
             </div>
