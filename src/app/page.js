@@ -1,18 +1,22 @@
+'use client';
+
 import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import ItemSlider from "@/components/ItemSlider";
 import AddMoreFormAndBtn from "@/components/AddMoreFormAndBtn";
+import { useContext } from "react";
+import { SiteContext } from "@/components/LayoutComponent";
 
-export default async function Home() {
+export default function Home() {
 
   /**
-   * CALL THE DATA FETCHING FUNCTION
+   * GET ITEMS VALUE THROUGH USING USECONTEXT
    */
-  const items = await getAllItems();
+  const {items} = useContext(SiteContext)
 
   return (
-    <main className="w-[95%] md:w-[90%] lg:w-[75%]  mx-auto">
+    <main className="w-[95%] md:w-[90%] lg:w-[75%] mx-auto">
       {/*------------BANNER SECTION------------ */}
       <section className="md:my-28 mt-10 mb-14 md:bg-[#F99F1C] rounded-3xl h-auto md:flex items-center px-2 md:px-8 text-white">
         <div className="md:pl-16">

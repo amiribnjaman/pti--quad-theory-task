@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
@@ -11,6 +11,13 @@ export const SiteContext = createContext(null);
 export default function LayoutComponent({ children }) {
   const [showMenu, setShowMenu] = useState(false);
   const [showAddCard, setShowAddCard] = useState(false);
+  const [items, setItems] = useState([])
+
+    useEffect(() => {
+      fetch('http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10')
+      .then(res => res.json())
+      .then(data => setItems(data))
+  },[])
 
   // VALUE SET
   const value = {
@@ -18,6 +25,7 @@ export default function LayoutComponent({ children }) {
     setShowMenu,
     showAddCard,
     setShowAddCard,
+    items,
   };
 
   return (

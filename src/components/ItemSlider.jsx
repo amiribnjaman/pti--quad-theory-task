@@ -39,7 +39,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
         className="mySwiper"
       >
         {IsPopular
-          ? Items.map(
+          ? Items?.map(
               (item) =>
                 item.IsPopular && (
                   <div key={item.Id}>
@@ -57,7 +57,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                 )
             )
           : IsRecommended
-          ? Items.map(
+          ? Items?.map(
               (item) =>
                 item.IsRecommended && (
                   <div key={item.Id}>
