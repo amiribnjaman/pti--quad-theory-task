@@ -7,11 +7,11 @@ import { ubuntu } from "@/utils/fonts";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F99F1C] pb-14 mt-28">
-      <div className="w-[70%] mx-auto flex justify-between items-center">
+      <div className="pt-4 md:pt-0 px-4 md:px-0 md:w-[70%] mx-auto flex justify-between items-center">
         {/*-----------FOOTER LEFT SIDE-------- */}
-        <div className="w-[55%]">
+        <div className="md:w-[55%]">
           {/*---------FOOTER SEARCH BOX-------- */}
-          <div className="w-[400px] pl-3 py-1 pr-2 rounded-xl bg-[#F2F2F2] flex justify-between">
+          <div className="w-[100%] md:w-[400px] pl-3 py-1 pr-2 rounded-xl bg-[#F2F2F2] flex justify-between">
             <input
               type="text"
               className="px-2 bg-transparent focus:outline-none"

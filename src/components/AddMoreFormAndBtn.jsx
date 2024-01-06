@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import { useForm } from "react-hook-form"
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { SiteContext } from "./LayoutComponent";
 
 export default function AddMoreFormAndBtn() {
-  const [showAddCard, setShowAddCard] = useState(false);
+  const { showAddCard, setShowAddCard } = useContext(SiteContext);
 
   const {
     register,
@@ -15,15 +16,15 @@ export default function AddMoreFormAndBtn() {
   } = useForm();
 
   /**
-   * 
+   *
    * HANDLE ADD ITEM FORM
    * @param {*} data accepting form data through submitting form
-   * 
-   */ 
+   *
+   */
   const handleAddItemForm = (data) => {
     toast.success("Your Item accepted! We'll work for add it.");
-    reset()
-  }
+    reset();
+  };
 
   return (
     <>

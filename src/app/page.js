@@ -12,14 +12,14 @@ export default async function Home() {
   const items = await getAllItems();
 
   return (
-    <main className="w-[75%] mx-auto">
+    <main className="w-[95%] md:w-[75%] mx-auto">
       {/*------------BANNER SECTION------------ */}
       <section className="my-28 bg-[#F99F1C] rounded-3xl h-auto flex items-center px-8 text-white">
-        <div className="pl-16">
-          <h1 className="text-4xl font-semibold tracking-wider leading-tight text-[#FFEFE7]">
+        <div className="md:pl-16">
+          <h1 className="text-xl md:text-4xl font-semibold tracking-wider leading-tight text-[#FFEFE7]">
             Deliver Food To Your Door Step!
           </h1>
-          <p className="text-[#ECD0A8] mt-3">
+          <p className="text-[#ECD0A8] text-sm md:text-lg mt-3">
             Authentic food, Quick Service, Fast Delivery
           </p>
         </div>

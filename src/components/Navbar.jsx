@@ -2,13 +2,15 @@
 
 import { ubuntu } from "@/utils/fonts";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext } from "react";
+import { SiteContext } from "./LayoutComponent";
 
 export default function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+
+  const {showMenu, setShowMenu} = useContext(SiteContext)
 
   return (
-    <nav className="w-[75%] relative mx-auto flex justify-between items-center py-8 ">
+    <nav className="w-[95%] md:w-[75%] relative gap-2 md:gap-0 mx-auto flex justify-between items-center py-8 ">
       {/*---------LOGO--------- */}
       <div>
         <Link href="/" className={`${ubuntu.className} text-3xl font-semibold`}>
@@ -17,9 +19,9 @@ export default function Navbar() {
       </div>
 
       {/*--------------NAVBAR MIDDLE-------- */}
-      <div className="flex gap-3 items-center ">
+      <div className="flex justify-between md:gap-3 items-center ">
         {/*----------SEARCHBAR-------------- */}
-        <div className="flex gap-3 w-[410px] bg-[#FEFEFE] rounded-md px-3 py-1 items-center">
+        <div className="flex justify-between md:gap-3 w-[50%] md:w-[410px] bg-[#FEFEFE] rounded-md px-3 py-1 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -43,7 +45,7 @@ export default function Navbar() {
         </div>
 
         {/*----------MENU ITEM-------------- */}
-        <div className="w-[155px]">
+        <div className="w-[40%] md:w-[155px]">
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="flex justify-between w-full items-center bg-[#FEFEFE] px-2.5 py-[11px] rounded-md"
@@ -138,7 +140,7 @@ export default function Navbar() {
       </div>
 
       {/*----------USER CARD-------- */}
-      <div>
+      <div className="md:block hidden">
         <button className="bg-[#FD6011] p-1.5 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
