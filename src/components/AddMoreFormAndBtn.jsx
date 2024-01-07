@@ -8,8 +8,7 @@ import getAllItems from '@/utils/getAllItems'
 
 
 export default function AddMoreFormAndBtn({  }) {
-  const { showAddCard, setShowAddCard } = useContext(SiteContext);
-  const { items: item } = useContext(SiteContext);
+  const { showAddCard, setShowAddCard, items: item } = useContext(SiteContext);
 
   // console.log(item)
 
@@ -27,6 +26,7 @@ export default function AddMoreFormAndBtn({  }) {
    *
    */
   const handleAddItemForm = async (d) => {
+    
     const img = new FormData();
     img.set('file', d.image[0]);
     let result = await fetch("api/upload", {
@@ -39,7 +39,6 @@ export default function AddMoreFormAndBtn({  }) {
 
     console.log(item)
       
-
     const data = {
       Id: Math.ceil(Math.random() * 10000000000),
       Name: d.name,
@@ -50,14 +49,14 @@ export default function AddMoreFormAndBtn({  }) {
       IsRecommended: true,
     };
 
-    if (data) {
-      item?.Items.push(data);
-      console.log(item);
-    }
-
     toast.success("Item added succefully. Thanks for contribution!");
     setShowAddCard(!showAddCard);
-      reset();
+    reset();
+
+    if (data && item != undefined) {
+      item?.Items.push(data);
+      console.log(item);
+    } 
 
   };
 
