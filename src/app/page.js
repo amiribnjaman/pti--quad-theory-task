@@ -1,23 +1,21 @@
-'use client';
+
 
 import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import ItemSlider from "@/components/ItemSlider";
 import AddMoreFormAndBtn from "@/components/AddMoreFormAndBtn";
-import { SiteContext } from "@/components/LayoutComponent";
-import { useContext } from "react";
 
-export default function Home() {
+export default async function Home() {
 
   /**
    * CALL THE DATA FETCHING FUNCTION
    */
-  // const items = await getAllItems();
+  const items = await getAllItems();
   // console.log(items)
 
-  const {items} = useContext(SiteContext)
-  console.log(items)
+  // const {items} = useContext(SiteContext)
+  // console.log(items)
 
   return (
     <main className="w-[95%] md:w-[90%] lg:w-[75%]  mx-auto">

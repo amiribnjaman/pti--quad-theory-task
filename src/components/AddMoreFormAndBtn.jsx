@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { SiteContext } from "./LayoutComponent";
 
-export default function AddMoreFormAndBtn({ items }) {
+export default function AddMoreFormAndBtn({  }) {
   const { showAddCard, setShowAddCard } = useContext(SiteContext);
   const { items: item } = useContext(SiteContext);
 
