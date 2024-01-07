@@ -23,21 +23,22 @@ export default function AddMoreFormAndBtn({  }) {
    *
    */
   const handleAddItemForm = async (d) => {
-    const img = new FormData();
-    img.set('file', d.image[0]);
-    let result = await fetch("api/upload", {
-      method: "POST",
-      body: img,
-    });
+    // const img = new FormData();
+    // img.set('file', d.image[0]);
+    // let result = await fetch("api/upload", {
+    //   method: "POST",
+    //   body: img,
+    // });
 
-    result = await result.json()
-    const imgurl = result.path.split('/')
+    // result = await result.json()
+    // const imgurl = result.path.split('/')
 
     const data = {
       Id: Math.ceil(Math.random() * 10000000000),
       Name: d.name,
       Price: d.price,
-      ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
+      // ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
+      ImageUrl: `/${d.image[0]}`,
       IsPopular: true,
       IsRecommended: true,
     };
