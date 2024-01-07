@@ -100,7 +100,7 @@ export default function AddMoreFormAndBtn({  }) {
             </label>
             <input
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
-              {...register("name", { required: true, pattern: /^[A-Za-z]+$/i })}
+              {...register("name", { required: true, pattern: /^[A-Za-z\s]+$/i })}
               aria-invalid={errors.name ? "true" : "false"}
               type="text"
               id="name"
