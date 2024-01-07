@@ -38,11 +38,12 @@ export default function AddMoreFormAndBtn({  }) {
       Name: d.name,
       Price: d.price,
       // ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
-      ImageUrl: `/${d.image[0]}`,
+      ImageUrl: `/${d.image[0].name}`,
       IsPopular: true,
       IsRecommended: true,
     };
 
+    console.log(data)
     if (data) {
       item.Items.push(data);
       item.TotalCount++;
