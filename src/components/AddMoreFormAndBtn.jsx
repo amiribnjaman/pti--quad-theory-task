@@ -22,7 +22,7 @@ export default function AddMoreFormAndBtn({  }) {
    * @param {*} data accepting form data through submitting form
    *
    */
-  const handleAddItemForm = async (d) => {
+  const handleAddItemForm = (d) => {
     // const img = new FormData();
     // img.set('file', d.image[0]);
     // let result = await fetch("api/upload", {
