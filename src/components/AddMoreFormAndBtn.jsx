@@ -47,13 +47,13 @@ export default function AddMoreFormAndBtn({  }) {
     };
 
     console.log(data)
-    if (data) {
-      item?.Items?.push(data);
+    if (item) {
+      item?.Items.push(data);
       item?.TotalCount++;
       console.log(item);
     }
+      reset();
 
-    reset();
   };
 
   return (
