@@ -43,7 +43,7 @@ export default function AddMoreFormAndBtn({  }) {
       IsRecommended: true,
     };
 
-    if (imgurl) {
+    if (data) {
       item.Items.push(data);
       item.TotalCount++;
       console.log(item);
