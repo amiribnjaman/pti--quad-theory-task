@@ -4,10 +4,14 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { SiteContext } from "./LayoutComponent";
+import getAllItems from '@/utils/getAllItems'
+
 
 export default function AddMoreFormAndBtn({  }) {
   const { showAddCard, setShowAddCard } = useContext(SiteContext);
   const { items: item } = useContext(SiteContext);
+
+  // console.log(item)
 
   const {
     register,
@@ -22,35 +26,37 @@ export default function AddMoreFormAndBtn({  }) {
    * @param {*} data accepting form data through submitting form
    *
    */
-  const handleAddItemForm = (d) => {
-    // const img = new FormData();
-    // img.set('file', d.image[0]);
-    // let result = await fetch("api/upload", {
-    //   method: "POST",
-    //   body: img,
-    // });
+  const handleAddItemForm = async (d) => {
+    const img = new FormData();
+    img.set('file', d.image[0]);
+    let result = await fetch("api/upload", {
+      method: "POST",
+      body: img,
+    });
 
-    // result = await result.json()
-    // const imgurl = result.path.split('/')
+    result = await result.json()
+    const imgurl = result.path.split('/')
 
-      toast.success("Item added succefully. Thanks for contribution!");
-    setShowAddCard(!showAddCard);
+    console.log(item)
+      
 
     const data = {
       Id: Math.ceil(Math.random() * 10000000000),
       Name: d.name,
       Price: d.price,
-      // ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
-      ImageUrl: `/${d.image[0].name}`,
+      ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
+      // ImageUrl: `/${d.image[0].name}`,
       IsPopular: true,
       IsRecommended: true,
     };
 
-    // if (item) {
-    //   item?.Items.push(data);
-    //   item?.TotalCount++;
-    //   console.log(item);
-    // }
+    if (data) {
+      item?.Items.push(data);
+      console.log(item);
+    }
+
+    toast.success("Item added succefully. Thanks for contribution!");
+    setShowAddCard(!showAddCard);
       reset();
 
   };
