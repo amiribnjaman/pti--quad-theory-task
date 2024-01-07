@@ -100,7 +100,7 @@ export default function AddMoreFormAndBtn({  }) {
             </label>
             <input
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
-              {...register("name", { required: true })}
+              {...register("name", { required: true, pattern: /^[A-Za-z]+$/i })}
               aria-invalid={errors.name ? "true" : "false"}
               type="text"
               id="name"
@@ -111,6 +111,11 @@ export default function AddMoreFormAndBtn({  }) {
                 Item name is required.
               </p>
             )}
+            {errors.name?.type === "pattern" && (
+              <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
+                Item name should be valid characters.
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col mb-3">
@@ -118,7 +123,7 @@ export default function AddMoreFormAndBtn({  }) {
               Price
             </label>
             <input
-              {...register("price", { required: true })}
+              {...register("price", { required: true, min: 1 })}
               aria-invalid={errors.price ? "true" : "false"}
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
               type="number"
@@ -130,6 +135,12 @@ export default function AddMoreFormAndBtn({  }) {
                 Price field is required.
               </p>
             )}
+            {/*-----EROR SHOWING---- */}
+            {errors.price?.type === "min" && (
+              <p role="alert" className="text-[14px] text-red-500 mt-[4px]">
+                Price should be valid numbers.
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col mb-3">
@@ -137,7 +148,7 @@ export default function AddMoreFormAndBtn({  }) {
               Image
             </label>
             <input
-              {...register("image", { required: true })}
+              {...register("image", {required: true})}
               aria-invalid={errors.image ? "true" : "false"}
               className="bg-[#EEEFF0] px-2 py-1 focus:outline-none rounded"
               type="file"
