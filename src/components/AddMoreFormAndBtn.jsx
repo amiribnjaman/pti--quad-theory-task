@@ -46,12 +46,11 @@ export default function AddMoreFormAndBtn({  }) {
       IsRecommended: true,
     };
 
-    console.log(data)
-    if (item) {
-      item?.Items.push(data);
-      item?.TotalCount++;
-      console.log(item);
-    }
+    // if (item) {
+    //   item?.Items.push(data);
+    //   item?.TotalCount++;
+    //   console.log(item);
+    // }
       reset();
 
   };
