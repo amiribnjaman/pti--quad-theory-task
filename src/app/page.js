@@ -1,17 +1,23 @@
+'use client';
+
 import Image from "next/image";
 import bannerImg from "@/Assets/Image1.png";
 import getAllItems from "@/utils/getAllItems";
 import ItemSlider from "@/components/ItemSlider";
 import AddMoreFormAndBtn from "@/components/AddMoreFormAndBtn";
+import { SiteContext } from "@/components/LayoutComponent";
+import { useContext } from "react";
 
-export default async function Home() {
+export default function Home() {
 
   /**
    * CALL THE DATA FETCHING FUNCTION
    */
-  const items = await getAllItems();
+  // const items = await getAllItems();
+  // console.log(items)
 
-  
+  const {items} = useContext(SiteContext)
+  console.log(items)
 
   return (
     <main className="w-[95%] md:w-[90%] lg:w-[75%]  mx-auto">
@@ -39,7 +45,7 @@ export default async function Home() {
         {/*-----HEADER-----*/}
         <div className="flex justify-between">
           <h3 className="text-2xl">Popular</h3>
-          <AddMoreFormAndBtn />
+          <AddMoreFormAndBtn items={items.Items} />
         </div>
 
         {/*-----------POPULAR FOOD SECTION----------*/}
@@ -61,7 +67,6 @@ export default async function Home() {
           <ItemSlider IsRecommended="IsRecommended" items={items} />
         </div>
       </section>
-
     </main>
   );
 }

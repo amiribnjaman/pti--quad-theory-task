@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { SiteContext } from "./LayoutComponent";
 
-export default function AddMoreFormAndBtn() {
+export default function AddMoreFormAndBtn({ items }) {
   const { showAddCard, setShowAddCard } = useContext(SiteContext);
+  const { items: item } = useContext(SiteContext);
 
   const {
     register,
@@ -21,9 +22,35 @@ export default function AddMoreFormAndBtn() {
    * @param {*} data accepting form data through submitting form
    *
    */
-  const handleAddItemForm = (data) => {
-    toast.success("Your Item accepted! We'll work for add it.");
+  const handleAddItemForm = async (d) => {
+    const img = new FormData();
+    img.set('file', d.image[0]);
+    let result = await fetch("api/upload", {
+      method: "POST",
+      body: img,
+    });
+
+    result = await result.json()
+    const imgurl = result.path.split('/')
+
+    const data = {
+      Id: Math.ceil(Math.random() * 10000000000),
+      Name: d.name,
+      Price: d.price,
+      ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
+      IsPopular: true,
+      IsRecommended: true,
+    };
+
+    if (imgurl) {
+      item.Items.push(data);
+      item.TotalCount++;
+      console.log(item);
+    }
+
+    toast.success("Item added succefully. Thanks for contribution!");
     reset();
+    setShowAddCard(!showAddCard);
   };
 
   return (

@@ -46,7 +46,7 @@ export default function ItemSlider({ IsPopular, IsRecommended, items }) {
                   <div key={item.Id}>
                     <SwiperSlide>
                     <div className="cursor-pointer h-[240px]">
-                      <Image style={{height: '210px'}} className='rounded-md' src={item.ImageUrl} width='200' height='210' alt={item.Name} />
+                      <Image className='rounded-md h-[210px] w-[200px]' src={item.ImageUrl} width='200' height='210' alt={item.Name} />
                       {/* <img
                         src={item.ImageUrl}
                         className="w-full h-[210px] rounded-lg"
