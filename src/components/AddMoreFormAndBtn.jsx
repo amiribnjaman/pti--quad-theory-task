@@ -33,6 +33,9 @@ export default function AddMoreFormAndBtn({  }) {
     // result = await result.json()
     // const imgurl = result.path.split('/')
 
+      toast.success("Item added succefully. Thanks for contribution!");
+    setShowAddCard(!showAddCard);
+
     const data = {
       Id: Math.ceil(Math.random() * 10000000000),
       Name: d.name,
@@ -45,14 +48,12 @@ export default function AddMoreFormAndBtn({  }) {
 
     console.log(data)
     if (data) {
-      item.Items.push(data);
-      item.TotalCount++;
+      item?.Items?.push(data);
+      item?.TotalCount++;
       console.log(item);
     }
 
-    toast.success("Item added succefully. Thanks for contribution!");
     reset();
-    setShowAddCard(!showAddCard);
   };
 
   return (
