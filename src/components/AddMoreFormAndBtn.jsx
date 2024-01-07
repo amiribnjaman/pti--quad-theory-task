@@ -34,8 +34,8 @@ export default function AddMoreFormAndBtn({  }) {
       body: img,
     });
 
-    result = await result.json()
-    const imgurl = result.path.split('/')
+    // result = await result.json()
+    // const imgurl = result.path.split('/')
 
     console.log(item)
       
@@ -43,8 +43,8 @@ export default function AddMoreFormAndBtn({  }) {
       Id: Math.ceil(Math.random() * 10000000000),
       Name: d.name,
       Price: d.price,
-      ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
-      // ImageUrl: `/${d.image[0].name}`,
+      // ImageUrl: `/public/uploads/${imgurl[imgurl.length - 1]}`,
+      ImageUrl: `/${d.image[0].name}`,
       IsPopular: true,
       IsRecommended: true,
     };
